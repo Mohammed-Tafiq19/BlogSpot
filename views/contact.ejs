@@ -1,32 +1,187 @@
+<!-- <h1>Contact</h1> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <!-- <h1>Contact</h1> -->
 
-<section class="contact" id="contact">
-    <div class="contact-text">
-      <h2>Contact <span>Me</span></h2>
-      <h4>Let's Work Together</h4>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque, vero. Cumque mollitia id suscipit nobis, corporis aperiam dolor voluptatum repudiandae a aspernatur, eaque sint asperiores ut debitis quo molestias esse!</p>
-      <div class="contact-list">
-          <li><i class='bx bxs-send'></i> mohammadtafiq3@gmail.com</li>
-          <li><i class='bx bxs-phone'></i> 8917371253</li>
-      </div>
-      <div class="contact-icons">
-          <a href="https://www.linkedin.com/in/mohammed-tafiq-ab139a219/"><i class='bx bxl-linkedin'></i></a>
-          <a href="https://github.com/Mohammed-Tafiq19"><i class='bx bxl-github'></i></a>
-      </div>
+    <style>
+        :root {
+            --black: #1c1c1c;
+            --gray: #7E7E7E;
+            --gray-light: #E4E4E4;
+            --red: #b30000;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--black);
+            background-color: #FAF5EE;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 50%;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+            border-radius: 5px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 10px;
+        }
+
+        input,
+        textarea {
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px;
+            background: #1c1c1c;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #7E7E7E;
+        }
+
+        #status {
+            margin-top: 20px;
+            text-align: center;
+            color: green;
+        }
+
+        .contact-list {
+            margin: 4rem;
+            text-align: center;
+        }
+
+        .contact-list li {
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .contact-list i {
+            display: inline-block;
+            color: #1c1c1c;
+            font-size: 20px;
+            font-weight: 600;
+            transition: all .40s ease;
+        }
+
+        .contact-list li a:hover {
+            transform: scale(1.01) translateY(-5px);
+            color: #1c1c1c;
+        }
+
+        .contact-icons {
+            margin: 4rem;
+            text-align: center;
+        }
+
+        .contact-icons i {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background: transparent;
+            border: 2px solid #7E7E7E;
+            border-radius: 50%;
+            font-size: 20px;
+            color: #1c1c1c;
+            text-decoration: none;
+            margin: 30px 15px 30px 0;
+
+            animation: slideLeft 1s ease forwards;
+            animation-delay: calc(.2s * var(--i));
+        }
+
+        .contact-icons i:hover {
+            /* background: #0ef; */
+            background: #7E7E7E;
+            color: #000;
+            /* box-shadow: 0 0 20px #0ef; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Contact Us</h1>
+        <form action="https://formspree.io/f/xgejdjlj" method="POST" id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+        <div id="status"></div>
+
     </div>
-    <div class="contact-form">
-      <form action="https://formspree.io/f/xgejdjlj"
-      method="POST">
-          <input type="text" name="username" placeholder="Enter Your Name" required  autocomplete="off">
-
-          <input type="email"  name="email" placeholder="Enter Your Email" required 
-          autocomplete="off">
-
-          <input type="" name="subject" placeholder="Enter Your Subject" autocomplete="off">
-
-          <textarea name="message" id="" cols="40" rows="10" placeholder="Enter Your Message" required autocomplete="off"></textarea>
-          <input type="submit" value="Submit" class="send">
-      </form>
+    <div class="contact-list">
+        <li><i class='bx bxs-send'></i> mohammadtafiq3@gmail.com</li>
+        <li><i class='bx bxs-phone'></i> 8917371253</li>
     </div>
-</section>
+    <div class="contact-icons">
+        <a href="https://www.linkedin.com/in/mohammed-tafiq-ab139a219/"><i class='bx bxl-linkedin'></i></a>
+        <a href="https://github.com/Mohammed-Tafiq19"><i class='bx bxl-github'></i></a>
+    </div>
+
+
+
+    <script type="module" src="">
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('contactForm');
+            const statusDiv = document.getElementById('status');
+
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                const name = form.name.value;
+                const email = form.email.value;
+                const message = form.message.value;
+
+                if (name && email && message) {
+                    statusDiv.textContent = 'Form submitted successfully!';
+                    form.reset();
+                } else {
+                    statusDiv.textContent = 'Please fill out all fields.';
+                    statusDiv.style.color = 'red';
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>
